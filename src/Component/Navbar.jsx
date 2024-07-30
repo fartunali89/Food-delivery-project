@@ -1,35 +1,33 @@
-import React, { useState } from 'react'
-import './Navbar.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { assets } from '../assets/images/assets';
+import './Navbar.css';
 
- 
-const Navbar = () => {
-  const[Food,setFood] = useState("home");
+const Navbar = ({setShowLogin}) => {
+
+  const [Food, setFood] = useState("Home")
+
   return (
     <div className='navbar'>
-
-      <img src='src/assets/images/res-logo.png' alt=''  className='logo'/>
-      
+      < img src={assets.logo} alt='logo' className='logo' />
       <ul className='navbar-menu'>
-      <li onClick={()=>setFood("Home")} className={Food==="Home"? "active":""}>Home</li>
-      <li   onClick={()=>setFood("Food")}className={Food==="Food"? "active":""}>Food</li>
-      <li  onClick={()=>setFood("Cart")}className={Food==="Cart"? "active":""}>Cart</li>
-      <li  onClick={()=>setFood("Contact")}className={Food==="Contact"? "active":""}>Contact</li>
+        < Link to='/' onClick={() => setFood("Home")} className={Food === "Home" ? "active" : ""}>Home</Link>
+        <a href='#explore-f' onClick={() => setFood("Food")} className={Food === "Food" ? "active" : ""}>Food</a>
+        <a href='#cart' onClick={() => setFood("Cart")} className={Food === "Cart" ? "active" : ""}>Cart</a>
+        <a href='#login' onClick={() => setFood("Contact")} className={Food === "Contact" ? "active" : ""}>Contact</a>
       </ul>
       <div className='navbar-right'>
-        <img src='src\assets\images\search_icon.png' alt=''/>
-        <div className='navbar-search-icon'>
-          <img src='src\assets\images\basket_icon.png' alt=''/>
-          <div className='dot'></div>
-          </div>
-          <button>sign in</button>
+        < img src='/src/assets/images/search_icon.png' alt='search' />
+
+
+
+        <button onClick={()=>setShowLogin(true)}>sign in</button>
+
       </div>
-      </div>
-      
-   
-     
-    
-    
-  )
+
+    </div>
+  );
+
 }
 
-export default Navbar;
+export default Navbar
