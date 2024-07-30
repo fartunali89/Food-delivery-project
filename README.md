@@ -1,7 +1,7 @@
 ﻿# Food-delivery-project
   This is a simple food delivery website built with React. The website includes a navigation bar and several pages: Home, Food, Cart, and Contact. 
    It is designed to provide a basic structure for a food delivery service and can be expanded with additional features as needed.
-  #Features
+  Features
    Navbar: Navigation bar with links to
    Home, Food, Cart, and Contact pages.Home Page: Welcome message and introductory information.Food Page: List of food items (this can be expanded with actual data).Cart Page: Placeholder 
    for cart functionality.Contact Page: Basic contact form or information.
